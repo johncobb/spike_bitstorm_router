@@ -23,6 +23,7 @@ queue_t btle_queue;
 
 void btle_init()
 {
+	btle_usart_init();
 	// set portd bit 5 as output
 	DDRD |= _BV(PD5);
 	// set portd bit 4 as input

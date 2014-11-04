@@ -33,7 +33,8 @@ typedef struct
 
 extern BTLE_BUFFER cell_buffer;
 
-void btle_usart_init(btle_rx_cb_t cb);
+void btle_usart_init();
+void btle_usart_init_cb(btle_rx_cb_t cb);
 void btle_usart_put_char(unsigned char c);
 void btle_usart_clear_buffer();
 uint8_t btle_usart_data_available(void);

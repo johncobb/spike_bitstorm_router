@@ -44,24 +44,26 @@ void terminal_in_cb(uint8_t c)
 
 void main()
 {
-	debug_init(terminal_in_cb);
-	init_btle_usart(terminal_in_cb);
+
+	//debug_init(terminal_in_cb);
+	//init_btle_usart(terminal_in_cb);
 
 	clock_init();
 
 	/*
 	 * load configuration
 	 */
-	LOG("config_init...\r\n");
+	//LOG("config_init...\r\n");
 	config_init();
 	btle_init();
 	sei();
 
 
 	while(true){
+		btle_tick();
+
 		if(timeout()){
-			btle_tick();
-			// DO SOMETHING
+			// just exercising timer
 			set_timer(1000);
 		}
 	}

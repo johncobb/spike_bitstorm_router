@@ -49,8 +49,8 @@ void btle_driver_tick()
 {
 	if(btle_usart_data_available()) {
 		if(handle_data()) {
-			char *ptr = NULL;
 
+			char *ptr = NULL;
 			// handle the new line
 			// TODO: review warning
 			if(parse_data(BTLE_TKSTART, &ptr) == BTLE_TKFOUND) {

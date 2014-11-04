@@ -31,7 +31,22 @@ void _btle_set_rx_cb(btle_rx_cb_t cb)
 	btle_rx_cb = cb;
 }
 
-void init_btle_usart(btle_rx_cb_t cb)
+void btle_usart_init()
+{
+	UBRR0H = UBRRH_VALUE;
+	UBRR0L = UBRRL_VALUE;
+
+	// Enble receiver and transmitter
+	UCSR0B |= (1<<RXCIE0) | (1<<TXEN0);
+
+	// Set rx and tx enable bits
+	UCSR0B |= (1 << RXEN0) | (1 << TXEN0);
+	// Set databits to 8
+	UCSR0C |= (1 << UCSZ01) | (1 << UCSZ00);
+}
+
+// not in use at this time
+void btle_usart_init_cb(btle_rx_cb_t cb)
 {
 	UBRR0H = UBRRH_VALUE;
 	UBRR0L = UBRRL_VALUE;
