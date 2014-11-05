@@ -11,18 +11,8 @@
 typedef void (*btle_rx_cb_t)(uint8_t);
 typedef void (*btle_out_cb_t)(uint8_t);
 
-//#define DEBUG_PORT       PORTE
-//#define DEBUG_USART      USARTE0
-//#define DEBUG_ISR_VECTOR USARTE0_RXC_vect
-
-//
-//#define DEBUG_PORT       PORTD
-//#define DEBUG_USART      USART_UDRE_vect
-
-//#define BTLE_ISR_VECTOR USART_RX_vect
-#define BTLE_ISR_VECTOR		USART0_RX_vect
-
-#define BTLE_RX_BUFFER_SIZE 512
+#define BTLE_RX_BUFFER_SIZE 	512
+#define BTLE_ISR_VECTOR			USART0_RX_vect
 
 typedef struct
 {
@@ -31,7 +21,7 @@ typedef struct
 	int tail;
 } BTLE_BUFFER;
 
-extern BTLE_BUFFER cell_buffer;
+extern BTLE_BUFFER btle_buffer;
 
 void btle_usart_init();
 void btle_usart_init_cb(btle_rx_cb_t cb);
