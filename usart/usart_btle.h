@@ -20,7 +20,7 @@ typedef void (*btle_out_cb_t)(uint8_t);
 //#define DEBUG_USART      USART_UDRE_vect
 
 //#define BTLE_ISR_VECTOR USART_RX_vect
-#define BTLE_ISR_VECTOR		USART0_RX
+#define BTLE_ISR_VECTOR		USART0_RX_vect
 
 #define BTLE_RX_BUFFER_SIZE 512
 

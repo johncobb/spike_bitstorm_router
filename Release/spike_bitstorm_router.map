@@ -255,7 +255,7 @@ END GROUP
  *(.init9)
  *(.text)
  .text          0x0000011a        0x4 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr51/crtm1284p.o
-                0x0000011a                __vector_20
+                0x0000011a                __vector_18
                 0x0000011a                __vector_28
                 0x0000011a                __vector_1
                 0x0000011a                __vector_32
@@ -287,7 +287,6 @@ END GROUP
                 0x0000011a                __vector_26
                 0x0000011a                __vector_14
                 0x0000011a                __vector_10
-                0x0000011a                __vector_18
                 0x0000011a                __vector_22
  .text          0x0000011e        0x0 ./util/clock.o
  .text          0x0000011e        0x0 ./util/config.o
@@ -409,9 +408,9 @@ END GROUP
  .text.btle_usart_transmit_string
                 0x0000058c       0x18 ./usart/usart_btle.o
                 0x0000058c                btle_usart_transmit_string
- .text.USART0_RX
+ .text.__vector_20
                 0x000005a4       0x54 ./usart/usart_btle.o
-                0x000005a4                USART0_RX
+                0x000005a4                __vector_20
  .text.queue_reset
                 0x000005f8       0x18 ./queue/queue.o
                 0x000005f8                queue_reset
